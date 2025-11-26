@@ -9,34 +9,34 @@ export class ExportController {
     this.dependencies = deps;
   }
 
-  // initialize() {
-  //   this.setupExportButtons();
-  //   this.setupFileImport();
-  // }
+  initialize() {
+    this.setupExportButtons();
+    this.setupFileImport();
+  }
 
-  // setupExportButtons() {
-  //   const buttons = [
-  //     { id: 'prepareAndExportBtn', handler: () => this.showExportOptions() }, // Changed this
-  //     { id: 'exportGPXBtn', handler: () => this.exportGPX() },
-  //     { id: 'exportPDFBtn', handler: () => this.exportPDF() }
-  //   ];
+  setupExportButtons() {
+    const buttons = [
+      { id: 'prepareAndExportBtn', handler: () => this.showExportOptions() }, // Changed this
+      { id: 'exportGPXBtn', handler: () => this.exportGPX() },
+      { id: 'exportPDFBtn', handler: () => this.exportPDF() }
+    ];
 
-  //   buttons.forEach(({ id, handler }) => {
-  //     const button = document.getElementById(id);
-  //     if (button) {
-  //       button.addEventListener('click', handler);
-  //     }
-  //   });
-  // }
+    buttons.forEach(({ id, handler }) => {
+      const button = document.getElementById(id);
+      if (button) {
+        button.addEventListener('click', handler);
+      }
+    });
+  }
 
-  // setupFileImport() {
-  //   const importFile = document.getElementById('importFile');
-  //   if (importFile) {
-  //     importFile.addEventListener('change', (e) => {
-  //       this.handleFileImport(e);
-  //     });
-  //   }
-  // }
+  setupFileImport() {
+    const importFile = document.getElementById('importFile');
+    if (importFile) {
+      importFile.addEventListener('change', (e) => {
+        this.handleFileImport(e);
+      });
+    }
+  }
 
   // NEW: Show export options - current route or saved routes
   showExportOptions() {
@@ -589,36 +589,36 @@ export class ExportController {
     }
   }
   // Add this method to the existing ExportController class
-setupExportButtons() {
-  const buttons = [
-    { id: 'prepareAndExportBtn', handler: () => this.showExportOptions() },
-    { id: 'exportGPXBtn', handler: () => this.exportGPX() },
-    { id: 'exportPDFBtn', handler: () => this.exportPDF() },
-    { id: 'exportSummaryBtn', handler: () => this.exportRouteSummary() } // Make sure this line is here
-  ];
+// setupExportButtons() {
+//   const buttons = [
+//     { id: 'prepareAndExportBtn', handler: () => this.showExportOptions() },
+//     { id: 'exportGPXBtn', handler: () => this.exportGPX() },
+//     { id: 'exportPDFBtn', handler: () => this.exportPDF() },
+//     { id: 'exportSummaryBtn', handler: () => this.exportRouteSummary() } // Make sure this line is here
+//   ];
 
-  console.log('🔧 Setting up export buttons...');
+//   console.log('🔧 Setting up export buttons...');
 
-  buttons.forEach(({ id, handler }) => {
-    const button = document.getElementById(id);
-    if (button) {
-      button.addEventListener('click', handler);
-      console.log(`✅ Button ${id} found and event listener added`);
-    } else {
-      console.error(`❌ Button ${id} not found in DOM`);
-    }
-  });
+//   buttons.forEach(({ id, handler }) => {
+//     const button = document.getElementById(id);
+//     if (button) {
+//       button.addEventListener('click', handler);
+//       console.log(`✅ Button ${id} found and event listener added`);
+//     } else {
+//       console.error(`❌ Button ${id} not found in DOM`);
+//     }
+//   });
 
-  // Debug: Check if the button exists after DOM load
-  setTimeout(() => {
-    const summaryBtn = document.getElementById('exportSummaryBtn');
-    console.log('🌐 Summary button check:', summaryBtn ? 'Found' : 'Not found');
-    if (summaryBtn) {
-      console.log('Button text:', summaryBtn.textContent);
-      console.log('Button parent:', summaryBtn.parentElement?.id);
-    }
-  }, 1000);
-}
+//   // Debug: Check if the button exists after DOM load
+//   setTimeout(() => {
+//     const summaryBtn = document.getElementById('exportSummaryBtn');
+//     console.log('🌐 Summary button check:', summaryBtn ? 'Found' : 'Not found');
+//     if (summaryBtn) {
+//       console.log('Button text:', summaryBtn.textContent);
+//       console.log('Button parent:', summaryBtn.parentElement?.id);
+//     }
+//   }, 1000);
+// }
 
 // NEW: Export Route Summary - Beautiful HTML page for sharing
 async exportRouteSummary() {
@@ -1401,3 +1401,4 @@ previewRouteSummary(htmlContent) {
 }
 
 }
+

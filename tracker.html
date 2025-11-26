@@ -2033,6 +2033,22 @@
       module.exports = { ImprovedTrackingInterface };
     }
   </script>
+<!-- Accessibility Form Modal -->
+  <div id="accessibilityOverlay" class="overlay hidden">
+    <div id="accessibilityFormContainer" class="modal-container"></div>
+  </div>
 
+  <!-- Hidden File Inputs -->
+  <input type="file" id="photoInput" accept="image/*" capture="environment" class="hidden">
+  <input type="file" id="importFile" accept=".json,.gpx" class="hidden">
+
+  <!-- External Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+  <!-- App JavaScript -->
+  <script type="module" src="src/main.js"></script>
+  <script type="module" src="src/features/auth.js"></script>
 </body>
 </html>

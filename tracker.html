@@ -869,19 +869,20 @@
     let GeolocationUtils, CalculationUtils, HelperUtils;
 
     try {
-      const storage = await import('./js/controllers/storage.js').catch(() => null);
-      const map = await import('./js/controllers/map.js').catch(() => null);
-      const tracking = await import('./js/controllers/tracking.js').catch(() => null);
-      const timer = await import('./js/controllers/timer.js').catch(() => null);
-      const accessibility = await import('./js/controllers/accessibility.js').catch(() => null);
-      const media = await import('./js/controllers/media.js').catch(() => null);
-      const exportMod = await import('./js/controllers/export.js').catch(() => null);
-      const firebase = await import('./js/controllers/firebase.js').catch(() => null);
-      const navigation = await import('./js/controllers/navigation.js').catch(() => null);
-      const compass = await import('./js/controllers/compass.js').catch(() => null);
-      const geolocation = await import('./js/utils/geolocation.js').catch(() => null);
-      const calculations = await import('./js/utils/calculations.js').catch(() => null);
-      const helpers = await import('./js/utils/helpers.js').catch(() => null);
+      const storage = await import('./ src/core /storage.js').catch(() => null);
+      const map = await import('./ src/core /map.js').catch(() => null);
+      const tracking = await import('./ src/core /tracking.js').catch(() => null);
+      const timer = await import('./ src/core /timer.js').catch(() => null);
+      const accessibility = await import('./ src/features /accessibility.js').catch(() => null);
+      const media = await import('./ src/features /media.js').catch(() => null);
+      const exportMod = await import('./ src/features /export.js').catch(() => null);
+      const firebase = await import('./src/features/firebase.js').catch(() => null);
+      const navigation = await import('./ src/ui /navigation.js').catch(() => null);
+      const compass = await import('./ src/ui /compass.js').catch(() => null);
+      const geolocation = await import('./src/utils/geolocation.js').catch(() => null);
+      const calculations = await import('./src/utils/calculations.js').catch(() => null);
+      const helpers = await import('./src/utils/helpers.js').catch(() => null);
+
 
       // Extract classes from modules
       StorageManager = storage?.StorageManager;

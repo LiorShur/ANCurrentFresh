@@ -9,34 +9,34 @@ export class ExportController {
     this.dependencies = deps;
   }
 
-  initialize() {
-    this.setupExportButtons();
-    this.setupFileImport();
-  }
+  // initialize() {
+  //   this.setupExportButtons();
+  //   this.setupFileImport();
+  // }
 
-  setupExportButtons() {
-    const buttons = [
-      { id: 'prepareAndExportBtn', handler: () => this.showExportOptions() }, // Changed this
-      { id: 'exportGPXBtn', handler: () => this.exportGPX() },
-      { id: 'exportPDFBtn', handler: () => this.exportPDF() }
-    ];
+  // setupExportButtons() {
+  //   const buttons = [
+  //     { id: 'prepareAndExportBtn', handler: () => this.showExportOptions() }, // Changed this
+  //     { id: 'exportGPXBtn', handler: () => this.exportGPX() },
+  //     { id: 'exportPDFBtn', handler: () => this.exportPDF() }
+  //   ];
 
-    buttons.forEach(({ id, handler }) => {
-      const button = document.getElementById(id);
-      if (button) {
-        button.addEventListener('click', handler);
-      }
-    });
-  }
+  //   buttons.forEach(({ id, handler }) => {
+  //     const button = document.getElementById(id);
+  //     if (button) {
+  //       button.addEventListener('click', handler);
+  //     }
+  //   });
+  // }
 
-  setupFileImport() {
-    const importFile = document.getElementById('importFile');
-    if (importFile) {
-      importFile.addEventListener('change', (e) => {
-        this.handleFileImport(e);
-      });
-    }
-  }
+  // setupFileImport() {
+  //   const importFile = document.getElementById('importFile');
+  //   if (importFile) {
+  //     importFile.addEventListener('change', (e) => {
+  //       this.handleFileImport(e);
+  //     });
+  //   }
+  // }
 
   // NEW: Show export options - current route or saved routes
   showExportOptions() {
@@ -1399,4 +1399,5 @@ previewRouteSummary(htmlContent) {
   // Clean up the URL after a delay
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
 }

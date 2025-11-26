@@ -783,7 +783,7 @@
 
     <!-- Map Rotation Control -->
     <button id="rotationToggle" class="rotation-control" 
-            onclick="window.trackingInterface.toggleMapRotation()"
+            onclick="toggleMapRotation()"
             aria-label="Toggle map rotation with compass"
             title="Enable/disable map rotation to match your heading">
       <span class="compass-icon">🧭</span>
@@ -792,21 +792,21 @@
     <!-- Main Tracking Controls -->
     <div class="tracking-controls">
       <button id="accessibilityBtn" class="control-btn accessibility-btn" 
-              onclick="window.trackingInterface.openAccessibilityForm()"
+              onclick="openAccessibilityForm()"
               aria-label="Open accessibility survey"
               title="Document trail accessibility features and barriers">
         <span>♿</span>
       </button>
       
       <button id="playPauseBtn" class="control-btn play-btn" 
-              onclick="window.trackingInterface.toggleTracking()"
+              onclick="toggleTracking()"
               aria-label="Start tracking"
               title="Start GPS tracking of your route">
         <span>▶</span>
       </button>
       
       <button id="saveBtn" class="control-btn save-btn" 
-              onclick="window.trackingInterface.saveRoute()"
+              onclick="saveRoute()"
               aria-label="Save route"
               title="Save your tracked route and accessibility data">
         <span>💾</span>
@@ -815,28 +815,28 @@
 
     <!-- Bottom Menu -->
     <nav class="bottom-menu" role="navigation" aria-label="Main actions">
-      <button class="menu-btn" onclick="window.trackingInterface.addNote()" 
+      <button class="menu-btn" onclick="addNote()" 
               aria-label="Add note to current location"
               title="Add a note about trail conditions or accessibility features">
         <span class="menu-icon">📝</span>
         <span class="menu-label">Note</span>
       </button>
       
-      <button class="menu-btn" onclick="window.trackingInterface.capturePhoto()" 
+      <button class="menu-btn" onclick="capturePhoto()" 
               aria-label="Take photo at current location"
               title="Capture photo documentation of trail features">
         <span class="menu-icon">📷</span>
         <span class="menu-label">Photo</span>
       </button>
       
-      <button class="menu-btn home-btn" onclick="window.trackingInterface.goHome()" 
+      <button class="menu-btn home-btn" onclick="goHome()" 
               aria-label="Return to home page"
               title="Return to Access Nature home page">
         <span class="menu-icon">🏠</span>
         <span class="menu-label">Home</span>
       </button>
       
-      <button class="menu-btn" onclick="window.trackingInterface.openMenu()" 
+      <button class="menu-btn" onclick="openMenu()" 
               aria-label="Open main menu"
               title="Access export options, settings, and more features">
         <span class="menu-icon">☰</span>
@@ -1931,7 +1931,7 @@
     // Initialize the enhanced tracking interface when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
       // Initialize the tracking interface
-      trackingInterface = new ImprovedTrackingInterface();
+      window.trackingInterface = new ImprovedTrackingInterface();
       
       // Set up additional accessibility enhancements
       setupAccessibilityEnhancements();
@@ -1971,7 +1971,7 @@
         if (e.key === 'Escape') {
           const modal = document.getElementById('accessibilityModal');
           if (modal && modal.style.display === 'block') {
-            window.trackingInterface.closeAccessibilityForm();
+            closeAccessibilityForm();
           }
         }
       });
